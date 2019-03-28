@@ -3,6 +3,7 @@ package com.gadhpurinfotech.cricketlivescore.activity;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -43,6 +44,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class full_scoreboard extends AppCompatActivity {
 
     public static String datapath, cur_status, matchDesc, batsmanId_ing1, outdescription_ing1, run_ing1, four_ing1, ball_ing1, six_ing1, sr_ing1, bowlerId, bowler_over, maiden, run, bowler_wicket, noball, wideball, sr;
@@ -67,6 +71,7 @@ public class full_scoreboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_scoreboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setDr
         setSupportActionBar(toolbar);
 
 //        appController = (AppController) getApplication();
@@ -98,6 +103,7 @@ public class full_scoreboard extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         mToolbar.setTitleTextColor(Color.WHITE);
+        toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.c_White), PorterDuff.Mode.SRC_ATOP);
 
         score_board();
 
@@ -142,6 +148,10 @@ public class full_scoreboard extends AppCompatActivity {
 
     public void score_board() {
 
+//        if(tabLayout.getTabCount()>0)
+//        {
+//            tabLayout.removeAllTabs();
+//        }
         String SCOR_BOARD = "http://synd.cricbuzz.com/iphone/3.0/match/" + datapath + "scorecard.json";
         // Toast.makeText(this, datapath, Toast.LENGTH_LONG).show();
         Log.e("SCOR_BOARD", SCOR_BOARD + "");
@@ -425,10 +435,22 @@ public class full_scoreboard extends AppCompatActivity {
     private void setTabBackgroundColor(Button button) {
 
     }
-
+    private Timer autoUpdate;
     @Override
     protected void onResume() {
         super.onResume();
+//        autoUpdate = new Timer();
+//        autoUpdate.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                runOnUiThread(new Runnable() {
+//                    public void run() {
+//                        score_board();
+//                    }
+//                });
+//            }
+//        }, 0, 5000);
+
     }
 
     /* private void setUpLayoutAdmob1() {
@@ -460,6 +482,8 @@ public class full_scoreboard extends AppCompatActivity {
         Intent intent = new Intent(full_scoreboard.this, MainActivity.class);
         startActivity(intent);
         finish();
+//        autoUpdate.cancel();
+
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -484,9 +508,16 @@ public class full_scoreboard extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+//        autoUpdate.cancel();
         super.onDestroy();
         if (interstitialAd != null) {
             interstitialAd.destroy();
         }
     }
+    @Override
+    public void onPause() {
+//        autoUpdate.cancel();
+        super.onPause();
+    }
+
 }
