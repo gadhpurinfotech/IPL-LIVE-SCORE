@@ -93,10 +93,6 @@ public class livecricket extends Fragment {
         });
 
         makeJsonArrayRequest();
-        this.mHandler = new Handler();
-
-        this.mHandler.postDelayed(m_Runnable, 5000);
-
         return rootView;
     }
 

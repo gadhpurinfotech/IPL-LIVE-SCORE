@@ -46,7 +46,6 @@ public class FragmentDrawer extends Fragment {
             R.drawable.about,
             R.drawable.rate,
             R.drawable.share,
-            R.drawable.more,
             R.drawable.icn_privacy_policy};
 
     public FragmentDrawer() {

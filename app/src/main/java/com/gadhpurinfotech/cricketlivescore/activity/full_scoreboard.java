@@ -144,7 +144,7 @@ public class full_scoreboard extends AppCompatActivity {
 
         String SCOR_BOARD = "http://synd.cricbuzz.com/iphone/3.0/match/" + datapath + "scorecard.json";
         // Toast.makeText(this, datapath, Toast.LENGTH_LONG).show();
-
+        Log.e("SCOR_BOARD", SCOR_BOARD + "");
         final String tag_string_req1 = "string_req";
         // Defined Array values to show in ListView
       /*  final ProgressDialog pDialog = new ProgressDialog(this);
@@ -161,7 +161,7 @@ public class full_scoreboard extends AppCompatActivity {
                     JSONObject header = null;
                     contain_body.setVisibility(View.VISIBLE);
                     JSONObject match = new JSONObject(response);
-                    Log.e("match : ",match+"");
+                    Log.e("match : ", match + "");
                     if (!match.has("matchId")) {
                         descion_layout.setVisibility(View.VISIBLE);
                         Toast.makeText(full_scoreboard.this, cur_status, Toast.LENGTH_SHORT).show();

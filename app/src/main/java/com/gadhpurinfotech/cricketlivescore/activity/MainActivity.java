@@ -70,11 +70,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         ly.setVisibility(View.GONE);
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-       /* tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icn_footer_live_cricket).setText(R.string.title_home));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icn_footer_recent_match).setText(R.string.title_friends));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icn_footer_ipl).setText(R.string.title_IPL));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.icn_footer_latest_news).setText(R.string.title_messages));*/
-        //getSupportActionBar().setElevation(0);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
@@ -121,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             if (i == 0) {
                 viewBorder.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 imgIcon.setImageResource(arrImgSelectFooter[0]);
+                txtTitle.setTextColor(getResources().getColor(R.color.colorPrimary));
             } else {
                 viewBorder.setBackgroundColor(Color.TRANSPARENT);
             }
@@ -148,6 +144,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     View view = tabLayout.getTabAt(i).getCustomView();
                     ImageView imgIcon = view.findViewById(R.id.imgIcon);
                     View viewBorder = view.findViewById(R.id.viewBorder);
+                    TextView txtTitle = view.findViewById(R.id.txtTitle);
+                    txtTitle.setTextColor(getResources().getColor(R.color.c_464646));
                     viewBorder.setBackgroundColor(Color.TRANSPARENT);
                     imgIcon.setImageResource(arrImgFooter[i]);
                 }
@@ -155,9 +153,11 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 ImageView imgIcon = tabView.findViewById(R.id.imgIcon);
                 View viewBorder = tabView.findViewById(R.id.viewBorder);
                 viewBorder.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                TextView txtTitle = tabView.findViewById(R.id.txtTitle);
 
                 viewPager.setCurrentItem(tab.getPosition());
                 imgIcon.setImageResource(arrImgSelectFooter[tab.getPosition()]);
+                txtTitle.setTextColor(getResources().getColor(R.color.colorPrimary));
                 viewPager.setVisibility(View.VISIBLE);
                 ly.setVisibility(View.GONE);
                 viewPager.setCurrentItem(tab.getPosition());
@@ -308,9 +308,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 share();
                 break;
             case 7:
-                more();
-                break;
-            case 8:
                 privacy_policy();
                 break;
             default:
