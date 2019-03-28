@@ -19,7 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rjn.cricketlivescore.R;
+import com.gadhpurinfotech.cricketlivescore.R;
 import com.gadhpurinfotech.cricketlivescore.adapter.NavigationDrawerAdapter;
 import com.gadhpurinfotech.cricketlivescore.model.NavDrawerItem;
 

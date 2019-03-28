@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.rjn.cricketlivescore.R;
+import com.gadhpurinfotech.cricketlivescore.R;
 
 /**
  * Created by sakhi on 3/27/2017.

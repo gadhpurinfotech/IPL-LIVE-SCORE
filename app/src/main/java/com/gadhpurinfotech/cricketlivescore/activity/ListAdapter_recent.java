@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.gadhpurinfotech.cricketlivescore.App.PVADMob;
-import com.rjn.cricketlivescore.R;
+import com.gadhpurinfotech.cricketlivescore.R;
 import com.squareup.picasso.Picasso;
 
 import static android.view.View.GONE;

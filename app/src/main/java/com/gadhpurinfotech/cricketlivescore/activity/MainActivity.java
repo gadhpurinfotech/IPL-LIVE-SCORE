@@ -32,7 +32,7 @@ import android.widget.TextView;
 
 import com.gadhpurinfotech.cricketlivescore.App.AppController;
 import com.gadhpurinfotech.cricketlivescore.App.PVADMob;
-import com.rjn.cricketlivescore.R;
+import com.gadhpurinfotech.cricketlivescore.R;
 import com.gadhpurinfotech.cricketlivescore.adapter.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {

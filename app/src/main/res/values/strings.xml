@@ -1,8 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" translatable="false" tools:ignore="MissingTranslation">
     <string name="app_name" translatable="false">IPL LIVE SCORE</string>
     <string name="action_settings" translatable="false">Settings</string>
-    <string name="action_Disclaimer" translatable="false">Disclaimer</string>
-    <string name="action_search" tools:ignore="MissingTranslation">Search</string>
+    <string name="action_Disclaimer">Disclaimer</string>
+    <string name="action_search">Search</string>
     <string name="drawer_open" tools:ignore="MissingTranslation">Open</string>
     <string name="drawer_close">Close</string>
 
@@ -52,10 +52,10 @@
     <string name="info_lose_internet">No internet connection.Please check again!</string>
     <string name="title_activity_main">MainActivity</string>
 
-    <string name="fb_App_Ad">420627371867246</string>
-    <string name="fb_Interstitial_Ad">420627371867246_420633421866641</string>
-    <string name="fb_Native_Ad">420627371867246_420628468533803</string>
-    <string name="fb_Banner_Ad">420627371867246_420627775200539</string>
+    <string name="fb_App_Ad"></string>
+    <string name="fb_Interstitial_Ad"></string>
+    <string name="fb_Native_Ad"></string>
+    <string name="fb_Banner_Ad"></string>
 
 
 </resources>

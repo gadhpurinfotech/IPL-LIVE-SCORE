@@ -33,9 +33,9 @@ import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
-import com.gadhpurinfotech.cricketlivescore.App.AppController;
+//import com.gadhpurinfotech.cricketlivescore.App.AppController;
 import com.gadhpurinfotech.cricketlivescore.App.PVADMob;
-import com.rjn.cricketlivescore.R;
+import com.gadhpurinfotech.cricketlivescore.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -59,7 +59,7 @@ public class full_scoreboard extends AppCompatActivity {
     private PVADMob pvadMob;
 
     private InterstitialAd interstitialAd;
-    AppController appController;
+//    AppController appController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class full_scoreboard extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        appController = (AppController) getApplication();
+//        appController = (AppController) getApplication();
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
@@ -100,45 +100,44 @@ public class full_scoreboard extends AppCompatActivity {
 
         score_board();
 
-        Log.i("Counter : ", "" + appController.fullScoreAdCounter);
-        appController.fullScoreAdCounter++;
-        if (appController.fullScoreAdCounter == 5) {
-            appController.fullScoreAdCounter = 0;
-            interstitialAd = new InterstitialAd(full_scoreboard.this, getResources().getString(R.string.fb_Interstitial_Ad));
-            interstitialAd.setAdListener(new InterstitialAdListener() {
-                @Override
-                public void onInterstitialDisplayed(Ad ad) {
+//        Log.i("Counter : ", "" + appController.fullScoreAdCounter);
+//        appController.fullScoreAdCounter++;
+//        if (appController.fullScoreAdCounter == 5) {
+//            appController.fullScoreAdCounter = 0;
+        interstitialAd = new InterstitialAd(full_scoreboard.this, getResources().getString(R.string.fb_Interstitial_Ad));
+        interstitialAd.setAdListener(new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
 
-                }
+            }
 
-                @Override
-                public void onInterstitialDismissed(Ad ad) {
-                }
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+            }
 
-                @Override
-                public void onError(Ad ad, AdError adError) {
+            @Override
+            public void onError(Ad ad, AdError adError) {
 
-                }
+            }
 
-                @Override
-                public void onAdLoaded(Ad ad) {
-                    interstitialAd.show();
-                }
+            @Override
+            public void onAdLoaded(Ad ad) {
+                interstitialAd.show();
+            }
 
-                @Override
-                public void onAdClicked(Ad ad) {
+            @Override
+            public void onAdClicked(Ad ad) {
 
-                }
+            }
 
-                @Override
-                public void onLoggingImpression(Ad ad) {
+            @Override
+            public void onLoggingImpression(Ad ad) {
 
-                }
-            });
-            interstitialAd.loadAd();
-        }
+            }
+        });
+        interstitialAd.loadAd();
+
     }
-
 
     public void score_board() {
 
@@ -379,7 +378,7 @@ public class full_scoreboard extends AppCompatActivity {
         });
 
         // Adding request to request queue
-        AppController.getInstance().addToRequestQueue(strReq1, tag_string_req1);
+//        AppController.getInstance().addToRequestQueue(strReq1, tag_string_req1);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Cricket Score Live Line.iml" filepath="$PROJECT_DIR$/Cricket Score Live Line.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IPL-LIVE-SCORE.iml" filepath="$PROJECT_DIR$/IPL-LIVE-SCORE.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dBPullToRefresh/dBPullToRefresh.iml" filepath="$PROJECT_DIR$/dBPullToRefresh/dBPullToRefresh.iml" />
     </modules>

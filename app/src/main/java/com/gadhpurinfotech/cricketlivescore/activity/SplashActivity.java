@@ -10,7 +10,7 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.rjn.cricketlivescore.R;
+import com.gadhpurinfotech.cricketlivescore.R;
 import com.ypyproductions.dialog.utils.AlertDialogUtils;
 import com.ypyproductions.utils.ApplicationUtils;
 
