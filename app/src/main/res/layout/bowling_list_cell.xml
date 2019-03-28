@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/tabllayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fullScoreDetailRawHeightSize"
+        android:background="@color/textColorPrimary"
+        android:gravity="center"
+        android:weightSum="11">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5.2">
+
+            <TextView
+                android:id="@+id/bowlename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Aus"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="@dimen/fullScoreDetailTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2">
+
+            <TextView
+                android:id="@+id/O"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="O"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="@dimen/fullScoreDetailTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/M"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="@dimen/fullScoreDetailTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="@dimen/fullScoreDetailTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/W"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="W"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="@dimen/fullScoreDetailTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/wd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wd"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="@dimen/fullScoreDetailTxtSize"
+
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/Nb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nb"
+                android:textColor="@color/navigationBarColor"
+                android:textSize="@dimen/fullScoreDetailTxtSize" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

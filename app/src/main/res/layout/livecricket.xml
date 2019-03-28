@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rjn.livescore.activity.livecricket">
+
+    <RelativeLayout
+        android:id="@+id/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/list_tracks"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:columnWidth="100dp"
+            android:divider="@null"
+            android:gravity="fill"
+            android:numColumns="auto_fit"
+            android:scrollbars="vertical"
+            android:showDividers="none"
+            android:smoothScrollbar="true"
+            android:stretchMode="columnWidth"
+            ptr:ptrMode="both" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

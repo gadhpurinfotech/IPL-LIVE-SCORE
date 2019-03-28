@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/tabllayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fullScoreDetailRawHeightSize"
+        android:background="@color/textColorPrimary"
+        android:gravity="center"
+        android:weightSum="11">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5.5">
+
+            <TextView
+                android:id="@+id/stricker_player"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Aus"
+                android:textColor="#222"
+                android:textSize="@dimen/fullScoreDetailTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/stricker_player_run"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="R"
+                android:textColor="#222"
+                android:textSize="@dimen/fullScoreTitleTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/stricker_player_bowl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:textColor="#222"
+                android:textSize="@dimen/fullScoreTitleTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/stricker_player_4s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4s"
+                android:textColor="#222"
+                android:textSize="@dimen/fullScoreTitleTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/stricker_player_6s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6s"
+                android:textColor="#222"
+                android:textSize="@dimen/fullScoreTitleTxtSize" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/stricker_player_sr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SR"
+                android:textColor="#222"
+                android:textSize="@dimen/fullScoreTitleTxtSize" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/c_F5F5F5" />
+</LinearLayout>

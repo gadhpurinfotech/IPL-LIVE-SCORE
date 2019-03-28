@@ -1,0 +1,12 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_drawer_width">260dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+
+    <dimen name="fullScoreTitleTxtSize">12dp</dimen>
+    <dimen name="fullScoreDetailRawHeightSize">30dp</dimen>
+    <dimen name="fullScoreDetailTxtSize">13dp</dimen>
+    <dimen name="fullScoreMainPadding">10dp</dimen>
+</resources>

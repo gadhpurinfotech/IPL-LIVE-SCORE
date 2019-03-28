@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/c_F5F5F5"
+    tools:context="com.rjn.livescore.activity.Lastestnews">
+
+    <RelativeLayout
+        android:id="@+id/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/list_tracks"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:columnWidth="100dp"
+            android:divider="@android:color/transparent"
+            android:gravity="fill"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:padding="5dp"
+            android:scrollbars="none"
+            android:smoothScrollbar="true"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp"
+            ptr:ptrMode="both" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

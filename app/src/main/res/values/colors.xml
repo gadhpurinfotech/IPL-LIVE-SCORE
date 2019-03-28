@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/c_cb336b</color>
+    <color name="colorPrimaryDark">#290a59</color>
+    tab_layout
+    <color name="c_C53A55">#C53A55</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="match_name_display_color">#91BF17</color>
+    <color name="match_winning_colorname_gray">#DFDFDF</color>
+    <color name="transparent">#e8ffffff</color>
+    <color name="c_White">#ffffff</color>
+    <color name="c_F5F5F5">#F5F5F5</color>
+    <color name="c_464646">#464646</color>
+    <color name="c_D4D4D4">#D4D4D4</color>
+    <color name="c_cb336b">#6f156c</color>
+    <color name="c_323232">#323232</color>
+    <color name="c_787878">#787878</color>
+
+
+</resources>
