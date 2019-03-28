@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,11 +24,11 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.gadhpurinfotech.cricketlivescore.App.AppController;
 import com.gadhpurinfotech.cricketlivescore.App.Constants;
 import com.gadhpurinfotech.cricketlivescore.R;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.ypyproductions.task.DBTask;
 import com.ypyproductions.task.IDBTaskListener;
 import com.ypyproductions.utils.ApplicationUtils;
@@ -54,6 +55,7 @@ public class livecricket extends Fragment {
     private DBTask mDBTask;
     View rootView;
     SwipeRefreshLayout swipeRefreshLayout;
+    private Handler mHandler;
 
     public livecricket() {
         // Required empty public constructor
@@ -62,7 +64,6 @@ public class livecricket extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
 
@@ -92,9 +93,24 @@ public class livecricket extends Fragment {
         });
 
         makeJsonArrayRequest();
+        this.mHandler = new Handler();
+
+        this.mHandler.postDelayed(m_Runnable, 5000);
+
         return rootView;
     }
 
+    private final Runnable m_Runnable = new Runnable() {
+        int i = 0;
+
+        public void run() {
+            i++;
+//            Toast.makeText(refresh.this,"in runnable",Toast.LENGTH_SHORT).show();
+            Log.e("in runnable", i + "\n");
+            livecricket.this.mHandler.postDelayed(m_Runnable, 5000);
+        }
+
+    };
 
     private void startGetData(final boolean isRefresh) {
         if (!ApplicationUtils.isOnline(getActivity())) {
@@ -306,9 +322,7 @@ public class livecricket extends Fragment {
         };
 
         // Adding request to request queue
-        AppController.getInstance().
-
-                addToRequestQueue(strReq1, tag_string_req1);
+        AppController.getInstance().addToRequestQueue(strReq1, tag_string_req1);
     }
 
     private void showpDialog() {

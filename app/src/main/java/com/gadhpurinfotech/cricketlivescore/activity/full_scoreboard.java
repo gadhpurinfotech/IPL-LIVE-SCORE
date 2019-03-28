@@ -34,6 +34,7 @@ import com.facebook.ads.AdError;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
 //import com.gadhpurinfotech.cricketlivescore.App.AppController;
+import com.gadhpurinfotech.cricketlivescore.App.AppController;
 import com.gadhpurinfotech.cricketlivescore.App.PVADMob;
 import com.gadhpurinfotech.cricketlivescore.R;
 import com.squareup.picasso.Picasso;
@@ -160,6 +161,7 @@ public class full_scoreboard extends AppCompatActivity {
                     JSONObject header = null;
                     contain_body.setVisibility(View.VISIBLE);
                     JSONObject match = new JSONObject(response);
+                    Log.e("match : ",match+"");
                     if (!match.has("matchId")) {
                         descion_layout.setVisibility(View.VISIBLE);
                         Toast.makeText(full_scoreboard.this, cur_status, Toast.LENGTH_SHORT).show();
@@ -378,7 +380,7 @@ public class full_scoreboard extends AppCompatActivity {
         });
 
         // Adding request to request queue
-//        AppController.getInstance().addToRequestQueue(strReq1, tag_string_req1);
+        AppController.getInstance().addToRequestQueue(strReq1, tag_string_req1);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
