@@ -78,11 +78,17 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        int[] arrImgFooter = new int[]{R.drawable.icn_footer_live_cricket,
+        final int[] arrImgFooter = new int[]{
+                R.drawable.icn_footer_live_cricket_unselected,
+                R.drawable.icn_footer_recent_match_unselected,
+                R.drawable.icn_footer_ipl_unselected,
+                R.drawable.icn_footer_latest_news_unselected};
+        final int[] arrImgSelectFooter=new int[]{
+                R.drawable.icn_footer_live_cricket,
                 R.drawable.icn_footer_recent_match,
                 R.drawable.icn_footer_ipl,
-                R.drawable.icn_footer_latest_news};
-        int[] arrImgSelectFooter=new int[]{};
+                R.drawable.icn_footer_latest_news
+        };
 
         String[] arrTitleFooter = new String[]{getResources().getString(R.string.title_home),
                 getResources().getString(R.string.title_friends),
@@ -114,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
             if (i == 0) {
                 viewBorder.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                imgIcon.setImageResource(arrImgSelectFooter[0]);
             } else {
                 viewBorder.setBackgroundColor(Color.TRANSPARENT);
             }
@@ -139,18 +146,23 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
                 for (int i = 0; i < tabLayout.getTabCount(); i++) {
                     View view = tabLayout.getTabAt(i).getCustomView();
+                    ImageView imgIcon = view.findViewById(R.id.imgIcon);
                     View viewBorder = view.findViewById(R.id.viewBorder);
                     viewBorder.setBackgroundColor(Color.TRANSPARENT);
+                    imgIcon.setImageResource(arrImgFooter[i]);
                 }
 
+                ImageView imgIcon = tabView.findViewById(R.id.imgIcon);
                 View viewBorder = tabView.findViewById(R.id.viewBorder);
                 viewBorder.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
                 viewPager.setCurrentItem(tab.getPosition());
+                imgIcon.setImageResource(arrImgSelectFooter[tab.getPosition()]);
                 viewPager.setVisibility(View.VISIBLE);
                 ly.setVisibility(View.GONE);
                 viewPager.setCurrentItem(tab.getPosition());
                 if (tab.getPosition() == 0) {
+
                     mToolbar.setTitle(R.string.title_home);
                 }
                 if (tab.getPosition() == 1) {
@@ -389,14 +401,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
 
         private void showDdisclaimerdialog() {
-
-
         final AlertDialog alertDialog = new AlertDialog.Builder(this)
                 .setView(R.layout.dialog_disclaimer)
                 .setTitle("Disclaimer")
                 .setNegativeButton("close", null)
                 .show();
-
-
     }
 }
