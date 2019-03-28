@@ -56,7 +56,7 @@
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="com.rjn.livescore.activity.FragmentDrawer"
+        android:name="com.gadhpurinfotech.cricketlivescore.activity.FragmentDrawer"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"

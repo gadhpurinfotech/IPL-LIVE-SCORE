@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.rjn.livescore.activity.livecricket">
+    tools:context="com.rjn.cricketlivescore.com.gadhpurinfotech.cricketlivescore.activity.livecricket">
 
     <RelativeLayout
         android:id="@+id/content_main"

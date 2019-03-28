@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/c_F5F5F5"
-    tools:context="com.rjn.livescore.activity.Lastestnews">
+    tools:context="com.rjn.cricketlivescore.com.gadhpurinfotech.cricketlivescore.activity.Lastestnews">
 
     <RelativeLayout
         android:id="@+id/content_main"
