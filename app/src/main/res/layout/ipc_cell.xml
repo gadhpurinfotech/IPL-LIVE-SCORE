@@ -112,7 +112,7 @@
                 android:ellipsize="marquee"
                 android:gravity="center_vertical"
                 android:text=""
-                android:textColor="@color/c_464646"
+                android:textColor="#6f156c"
                 android:textSize="11dp" />
 
             <TextView
@@ -139,7 +139,7 @@
                 android:layout_marginRight="10dp"
                 android:gravity="center_vertical"
                 android:text=""
-                android:textColor="@color/c_464646"
+                android:textColor="#6f156c"
                 android:textSize="11dp" />
         </RelativeLayout>
 
