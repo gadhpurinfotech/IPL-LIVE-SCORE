@@ -5,7 +5,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.gadhpurinfotech.cricketlivescore"
+        applicationId "com.sports.livecricketscore"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
@@ -29,6 +29,7 @@ dependencies {
     configurations.all {exclude group: 'com.android.support', module: 'support-v4'}
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:customtabs:28.0.0'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
@@ -43,12 +44,11 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation project(':dBPullToRefresh')
 
-    // FACEBOOK AD
-    implementation 'com.facebook.android:audience-network-sdk:5.2.0'
+    implementation 'com.google.android.gms:play-services-ads:17.2.0'
 
     implementation 'com.taishi-y:flipprogressdialog:0.1.0'
 
-    implementation 'com.google.android.gms:play-services-analytics:11.0.4'
+    //implementation 'com.google.android.gms:play-services-analytics:11.0.4'
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'

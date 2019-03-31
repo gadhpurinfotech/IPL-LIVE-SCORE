@@ -22,7 +22,7 @@
         <item>@string/nav_item_friends</item>
         <item>@string/nav_item_IPL</item>
         <item>@string/nav_item_notifications</item>
-        <item>@string/about</item>
+        <!--<item>@string/about</item>-->
         <item>@string/rate</item>
         <item>@string/share</item>
 
@@ -55,6 +55,8 @@
     <string name="fb_Interstitial_Ad"></string>
     <string name="fb_Native_Ad"></string>
     <string name="fb_Banner_Ad"></string>
+    <string name="interstitial_ad_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_ad_id">ca-app-pub-3940256099942544/6300978111</string>
 
 
 </resources>

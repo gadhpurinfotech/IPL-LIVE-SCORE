@@ -27,7 +27,7 @@
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="Test"
-            android:textColor="@color/c_464646"
+            android:textColor="@color/c_323232"
             android:textSize="10dp" />
 
         <View
