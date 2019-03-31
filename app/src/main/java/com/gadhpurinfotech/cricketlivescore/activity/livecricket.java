@@ -214,9 +214,10 @@ public class livecricket extends Fragment {
                             constants.batteamscore = miniscore.getString("batteamscore");
                             constants.bowlteamid = miniscore.getString("bowlteamid");
                             constants.bowlteamscore = miniscore.getString("bowlteamscore");
-//                            Log.e(constants.bowlteamscore," "+constants.batteamscore);
+                            Log.e(constants.bowlteamscore," "+constants.batteamscore);
                             constants.overs = miniscore.getString("overs");
                             String bowlteamovers = miniscore.getString("bowlteamovers");
+//                            if()
                             constants.bowler_over = bowlteamovers;
                             String rrr = miniscore.getString("rrr");
                             String crr = miniscore.getString("crr");
@@ -274,17 +275,20 @@ public class livecricket extends Fragment {
                             String enabled = alerts.getString("enabled");
                             String alerts_type = alerts.getString("type");
                         }
-                        /*
+
                         String bowlScore = constants.bowlteamscore;
                         String batScore = constants.batteamscore;
                         String bowlOver = constants.bowler_over;
                         String batOver = constants.overs;
-                        if (constants.team1_id == constants.batteamid) {
+                        if (constants.team1_id.equals(constants.batteamid)) {
+                            Log.e("Bat id: "+constants.batteamid," Team 1 id: "+constants.team1_id);
+                            Log.e("Bowl id: "+constants.bowlerId," Team 1 id: "+constants.team2_id);
                             constants.overs = bowlOver;
                             constants.bowler_over = batOver;
                             constants.bowlteamscore = batScore;
                             constants.batteamscore = bowlScore;
-                        }*/
+                        }
+//                        Log.e("",constants.)
 //                        }else
 //                        {
 //                            constants.bowlteamscore=bowlScore;

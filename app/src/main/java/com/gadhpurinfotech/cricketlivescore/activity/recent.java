@@ -273,6 +273,18 @@ public class recent extends Fragment {
                             String enabled = alerts.getString("enabled");
                             String alerts_type = alerts.getString("type");
                         }
+                        String bowlScore = constants.bowlteamscore;
+                        String batScore = constants.batteamscore;
+                        String bowlOver = constants.bowler_over;
+                        String batOver = constants.overs;
+                        if (constants.team1_id.equals(constants.batteamid)) {
+                            Log.e("Bat id: "+constants.batteamid," Team 1 id: "+constants.team1_id);
+                            Log.e("Bowl id: "+constants.bowlerId," Team 1 id: "+constants.team2_id);
+                            constants.overs = bowlOver;
+                            constants.bowler_over = batOver;
+                            constants.bowlteamscore = batScore;
+                            constants.batteamscore = bowlScore;
+                        }
                         live_data_list.add(constants);
                         System.out.println(i+" : "+ constants.overs);
 //                        Log.e("Constant Over : "+i,constants.overs.toString());
