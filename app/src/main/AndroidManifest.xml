@@ -19,7 +19,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning,InnerclassSeparator">
         <activity
             android:name="com.gadhpurinfotech.cricketlivescore.activity.MainActivity"
             android:label="@string/app_name"

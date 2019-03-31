@@ -245,6 +245,7 @@ public class full_scoreboard extends AppCompatActivity {
 
                             btnteam1.setTag(1);
                             String bowlingteam = Inning_num_1.getString("bowlingteam");
+                            content_full_team2_name_ipl.setText(bowlingteam);
                             String bowlingteamid = Inning_num_1.getString("bowlingteamid");
                             String runs = Inning_num_1.getString("runs");
 

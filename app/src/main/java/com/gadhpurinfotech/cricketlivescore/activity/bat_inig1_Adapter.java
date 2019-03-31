@@ -74,7 +74,10 @@ public class bat_inig1_Adapter extends BaseAdapter {
         holder.batteamid = this.main.batsmen_data_list.get(position).batteamid;
         holder.player_id = this.main.batsmen_data_list.get(position).player_id;
         holder.batsmanId_ing = this.main.batsmen_data_list.get(position).batsmanId_ing1;
-        holder.player_fName = this.main.batsmen_data_list.get(position).player_fName;
+//        if (this.main.batsmen_data_list.get(position).outdescription_ing1.toLowerCase().equals("batting"))
+//            holder.player_fName = this.main.batsmen_data_list.get(position).player_fName + "*";
+//        else
+//            holder.player_fName = this.main.batsmen_data_list.get(position).player_fName ;
         holder.player_name = this.main.batsmen_data_list.get(position).player_name;
         holder.batsmanId_ing1.setText(this.main.batsmen_data_list.get(position).batsmanId_ing1);
         holder.run_ing1.setText(this.main.batsmen_data_list.get(position).run_ing1);
