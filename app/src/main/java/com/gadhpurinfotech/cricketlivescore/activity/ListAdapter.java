@@ -205,7 +205,7 @@ public class ListAdapter extends BaseAdapter {
         }*/
 
 
-        if (holder.mchState.toString().equals("inprogress") || holder.mchState.toString().equals("stump") || holder.mchState.toString().equals("tea")) {
+        if (holder.mchState.toString().equals("inprogress") || holder.mchState.toString().equals("stump") || holder.mchState.toString().equals("tea") || holder.mchState.toString().equals("innings break")) {
             holder.content_full_livestatus.setText("Live");
 //            holder.time.setVisibility(View.GONE);
             //holder.time_num.setVisibility(GONE);
@@ -247,14 +247,14 @@ public class ListAdapter extends BaseAdapter {
 
         }
 
-        if (holder.mchState.toString().equals("delay")) {
+        if (holder.mchState.toString().equals("delay") || holder.mchState.toString().equals("abandon")) {
 
             holder.content_full_livestatus.setText(this.main.live_data_list.get(position).mchState.toUpperCase());
             holder.overs.setVisibility(View.GONE);
             holder.bowl_over.setVisibility(View.GONE);
             //  holder.oversright.setVisibility(GONE);
 //            holder.time.setVisibility(View.GONE);
-            holder.content_full_about.setVisibility(View.GONE);
+            holder.content_full_about.setVisibility(View.VISIBLE);
             holder.status.setVisibility(View.VISIBLE);
             holder.vcity.setVisibility(View.VISIBLE);
 //            holder.vcountry.setVisibility(View.GONE);

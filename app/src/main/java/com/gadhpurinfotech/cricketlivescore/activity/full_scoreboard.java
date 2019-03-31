@@ -68,7 +68,6 @@ public class full_scoreboard extends AppCompatActivity {
 
 
     private TextView match_srs, ing_1_run, ing_2_run, ing_1_over, ing_2_over, content_full_team1_name_ipl, content_full_team2_name_ipl, content_full_txtmatch_type, content_full_livestatus, content_full_location;
-    private TextView txt_Score1, txt_SCore2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,8 +119,7 @@ public class full_scoreboard extends AppCompatActivity {
         content_full_txtmatch_type = findViewById(R.id.content_full_about);
         content_full_livestatus = findViewById(R.id.content_full_livestatus);
         content_full_location = findViewById(R.id.content_full_location);
-        txt_Score1 = findViewById(R.id.content_txt_score1);
-        txt_SCore2 = findViewById(R.id.content_txt_score2);
+
 //        score_board();
 
 //        Log.i("Counter : ", "" + appController.fullScoreAdCounter);
@@ -247,7 +245,6 @@ public class full_scoreboard extends AppCompatActivity {
 
                             btnteam1.setTag(1);
                             String bowlingteam = Inning_num_1.getString("bowlingteam");
-                            content_full_team2_name_ipl.setText(bowlingteam);
                             String bowlingteamid = Inning_num_1.getString("bowlingteamid");
                             String runs = Inning_num_1.getString("runs");
 
@@ -255,14 +252,13 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_1.getString("overs");
                             String innDesc = Inning_num_1.getString("innDesc");
                             String RR = Inning_num_1.getString("RR");
-                            txt_SCore2.setVisibility(View.GONE);
+
                             ing_1_run.setText(runs + " - " + wickets);
                             ing_1_over.setText(overs + " Over");
                             content_full_team1_name_ipl.setText(battingteam);
                         }
 
                         if (Innings.has("2")) {
-                            txt_SCore2.setVisibility(View.VISIBLE);
                             JSONObject Inning_num_2 = Innings.getJSONObject("2");
                             String battingteamid = Inning_num_2.getString("battingteamid");
                             String battingteam = Inning_num_2.getString("battingteam");
@@ -277,7 +273,7 @@ public class full_scoreboard extends AppCompatActivity {
                             ing_2_run.setText(runs + " - " + wickets);
                             ing_2_over.setText(overs + " Over");
                             content_full_team2_name_ipl.setText(battingteam);
-
+                            tabLayout.getTabAt(1).select();
                         }
                         if (Innings.has("3")) {
                             JSONObject Inning_num_3 = Innings.getJSONObject("3");
@@ -291,6 +287,8 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_3.getString("overs");
                             String innDesc = Inning_num_3.getString("innDesc");
                             String RR = Inning_num_3.getString("RR");
+                            tabLayout.getTabAt(2).select();
+
 
                         }
                         if (Innings.has("4")) {
@@ -306,6 +304,7 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_4.getString("overs");
                             String innDesc = Inning_num_4.getString("innDesc");
                             String RR = Inning_num_4.getString("RR");
+                            tabLayout.getTabAt(3).select();
 
                         }
                     }

@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/tabllayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="10dp"
         android:layout_weight="0.5"
         android:background="@drawable/bg_top_corner_themecolor"
         android:gravity="center"
@@ -120,7 +120,7 @@
     <LinearLayout
         android:id="@+id/tabllayout_bowl"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="10dp"
         android:layout_marginTop="10dp"
         android:layout_weight="0.5"
         android:background="@drawable/bg_top_corner_themecolor"

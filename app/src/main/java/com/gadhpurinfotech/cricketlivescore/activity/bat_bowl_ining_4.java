@@ -159,14 +159,16 @@ public class bat_bowl_ining_4 extends Fragment {
                                     for (int j = 0; j < batsmen.length(); j++) {
                                         constants = new Constants();
                                         batsmen_object = batsmen.getJSONObject(j);
-
+                                        constants.outdescription_ing1 = batsmen_object.getString("outdescription");
                                         for (int q = 0; q < players.length(); q++) {
                                             JSONObject players_object = players.getJSONObject(q);
                                             if (players_object.getString("id").equals(batsmen_object.getString("batsmanId"))) {
                                                 constants.batsmanId_ing1 = players_object.getString("fName");
+                                                if (constants.outdescription_ing1.equals("batting"))
+                                                    constants.batsmanId_ing1 = constants.batsmanId_ing1 + " *";
                                             }
                                         }
-                                        constants.outdescription_ing1 = batsmen_object.getString("outdescription");
+
                                         constants.run_ing1 = batsmen_object.getString("run");
                                         constants.ball_ing1 = batsmen_object.getString("ball");
                                         constants.four_ing1 = batsmen_object.getString("four");
