@@ -91,7 +91,7 @@ public class bat_bowl_ining_1 extends Fragment {
     public void score_board() {
 
 
-        String SCOR_BOARD = "http://synd.cricbuzz.com/iphone/3.0/match/" + full_scoreboard.datapath + "scorecard.json";
+        String SCOR_BOARD = "http://synd.cricbuzz.com/cbzandroid/3.0/match/" + full_scoreboard.datapath + "scorecard.json";
         // Toast.makeText(this, datapath, Toast.LENGTH_LONG).show();
 
         final String tag_string_req1 = "string_req";

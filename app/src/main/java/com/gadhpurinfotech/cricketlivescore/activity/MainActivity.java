@@ -307,9 +307,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             case 6:
                 share();
                 break;
-            case 7:
-                privacy_policy();
-                break;
+
             default:
                 break;
         }

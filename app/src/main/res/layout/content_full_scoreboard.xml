@@ -13,79 +13,231 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.9">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/flag_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:visibility="invisible">
-
-        <ImageView
-            android:id="@+id/display_img"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/bg_round_team"
-            android:src="@drawable/flag_defualt" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_raw_latest_news"
+        android:orientation="vertical"
+        android:padding="2dp">
 
         <TextView
-            android:id="@+id/vs"
+            android:id="@+id/content_full_txtSeriesName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="vs"
-            android:textAlignment="center"
+            android:text=""
             android:textAllCaps="true"
-            android:textColor="@color/c_323232"
-            android:textSize="14dp"
-            android:textStyle="bold" />
+            android:textColor="@color/c_cb336b"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
-        <ImageView
-            android:id="@+id/display_img2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/bg_round_team"
-            android:src="@drawable/flag_defualt" />
+        <LinearLayout
+            android:id="@+id/content_full_image_layout"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@color/textColorPrimary"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Score"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/content_full_team1_Score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="359-6"
+                    android:textColor="#6f156c"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/content_full_team1_Over"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="46.3 Over"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/content_full_team1_name_ipl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:singleLine="true"
+                android:text="AUS"
+                android:textColor="#222"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/content_full_team1_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_round_team" />
+
+            <TextView
+                android:id="@+id/content_full_vs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="vs"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="#222"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/content_full_team2_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_round_team" />
+
+            <TextView
+                android:id="@+id/content_full_team2_name_ipl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:singleLine="true"
+                android:text="IND"
+                android:textColor="#222"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Score"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/content_full_team2_Score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="359-6"
+                    android:textColor="#6f156c"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/content_full_team2_Over"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="46.3 Over"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content_full_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/c_cb336b"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/content_full_location"
+                android:layout_width="120sp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="Punjab Cricket Association IS Bindra Stadium"
+                android:textColor="#6f156c"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/content_full_livestatus"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_match_bottum"
+                android:gravity="center"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/c_White"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/content_full_about"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="#6f156c"
+                android:textSize="11dp" />
+        </RelativeLayout>
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/decsion_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:visibility="invisible">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/match_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Match Desc"
-            android:textColor="@color/navigationBarColor"
-
-            android:textSize="20dp"
+            android:text="FULL SCORE BOARD"
+            android:textColor="#333232"
+            android:textSize="18dp"
             android:textStyle="bold" />
-
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/fullScoreMainPadding"
-        android:text="Full Score Board"
-        android:textAllCaps="true"
-        android:textColor="@color/c_464646"
-        android:textSize="13dp"
-        android:textStyle="bold"
-        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/tab_layout"
@@ -134,7 +286,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar"
             android:background="@color/colorPrimaryDark"
-            android:elevation="8dp"
+            android:elevation="2dp"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:visibility="visible" />

@@ -66,6 +66,9 @@ public class full_scoreboard extends AppCompatActivity {
     private InterstitialAd interstitialAd;
 //    AppController appController;
 
+
+    private TextView match_srs, ing_1_run, ing_2_run, ing_1_over, ing_2_over, content_full_team1_name_ipl, content_full_team2_name_ipl, content_full_txtmatch_type, content_full_livestatus, content_full_location;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,19 +85,19 @@ public class full_scoreboard extends AppCompatActivity {
 
         //GlobalClass.pvadMob.showInter(0, "FULL");
 
-        flag_layout = (LinearLayout) findViewById(R.id.flag_layout);
-        descion_layout = (LinearLayout) findViewById(R.id.decsion_layout);
+//        flag_layout = (LinearLayout) findViewById(R.id.content_full_flag_layout);
+//        descion_layout = (LinearLayout) findViewById(R.id.decsion_layout);
         tab_layout = (LinearLayout) findViewById(R.id.tab_layout);
         contain_body = (LinearLayout) findViewById(R.id.fragment_container);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
-        match_status = (TextView) findViewById(R.id.match_status);
+        match_status = (TextView) findViewById(R.id.content_full_state);
         datapath = getIntent().getExtras().getString("datapath");
         cur_status = getIntent().getExtras().getString("status");
         matchDesc = getIntent().getExtras().getString("matchDesc");
         match_status.setText(cur_status);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        display_img1 = (ImageView) findViewById(R.id.display_img);
-        display_img2 = (ImageView) findViewById(R.id.display_img2);
+        display_img1 = (ImageView) findViewById(R.id.content_full_team1_img);
+        display_img2 = (ImageView) findViewById(R.id.content_full_team2_img);
 
         btnteam1 = findViewById(R.id.btnteam1);
         btnteam2 = findViewById(R.id.btnteam2);
@@ -105,7 +108,19 @@ public class full_scoreboard extends AppCompatActivity {
         mToolbar.setTitleTextColor(Color.WHITE);
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.c_White), PorterDuff.Mode.SRC_ATOP);
 
-        score_board();
+
+        match_srs = findViewById(R.id.content_full_txtSeriesName);
+        ing_1_run = findViewById(R.id.content_full_team1_Score);
+        ing_2_run = findViewById(R.id.content_full_team2_Score);
+        ing_1_over = findViewById(R.id.content_full_team1_Over);
+        ing_2_over = findViewById(R.id.content_full_team2_Over);
+        content_full_team1_name_ipl = findViewById(R.id.content_full_team1_name_ipl);
+        content_full_team2_name_ipl = findViewById(R.id.content_full_team2_name_ipl);
+        content_full_txtmatch_type = findViewById(R.id.content_full_about);
+        content_full_livestatus = findViewById(R.id.content_full_livestatus);
+        content_full_location = findViewById(R.id.content_full_location);
+
+//        score_board();
 
 //        Log.i("Counter : ", "" + appController.fullScoreAdCounter);
 //        appController.fullScoreAdCounter++;
@@ -147,12 +162,10 @@ public class full_scoreboard extends AppCompatActivity {
     }
 
     public void score_board() {
-
-//        if(tabLayout.getTabCount()>0)
-//        {
-//            tabLayout.removeAllTabs();
-//        }
-        String SCOR_BOARD = "http://synd.cricbuzz.com/iphone/3.0/match/" + datapath + "scorecard.json";
+        if (tabLayout.getTabCount() > 0) {
+            tabLayout.removeAllTabs();
+        }
+        String SCOR_BOARD = "http://synd.cricbuzz.com/cbzandroid/3.0/match/" + datapath + "scorecard.json";
         // Toast.makeText(this, datapath, Toast.LENGTH_LONG).show();
         Log.e("SCOR_BOARD", SCOR_BOARD + "");
         final String tag_string_req1 = "string_req";
@@ -173,19 +186,20 @@ public class full_scoreboard extends AppCompatActivity {
                     JSONObject match = new JSONObject(response);
                     Log.e("match : ", match + "");
                     if (!match.has("matchId")) {
-                        descion_layout.setVisibility(View.VISIBLE);
+//                        descion_layout.setVisibility(View.VISIBLE);
                         Toast.makeText(full_scoreboard.this, cur_status, Toast.LENGTH_SHORT).show();
                     }
 
                     if (match.has("matchId")) {
-                        flag_layout.setVisibility(View.VISIBLE);
-                        descion_layout.setVisibility(View.VISIBLE);
-                        tab_layout.setVisibility(View.VISIBLE);
+//                        flag_layout.setVisibility(View.VISIBLE);
+//                        descion_layout.setVisibility(View.VISIBLE);
+//                        tab_layout.setVisibility(View.VISIBLE);
 
 
                         String matchId = match.getString("matchId");
                         String srsid = match.getString("srsid");
                         String srs = match.getString("srs");
+                        match_srs.setText(srs);
                         String datapath = match.getString("datapath");
                     }
                     if (match.has("header")) {
@@ -208,6 +222,14 @@ public class full_scoreboard extends AppCompatActivity {
                         String addnStatus = header.getString("addnStatus");
                         String MOM = header.getString("MOM");
                         String NoOfIngs = header.getString("NoOfIngs");
+
+                        if (!mchState.isEmpty() && mchState.toLowerCase().equals("complete")) {
+                            content_full_livestatus.setText("COMPLETED");
+                        } else {
+                            content_full_livestatus.setText("LIVE");
+                        }
+                        content_full_location.setText(grnd);
+                        content_full_txtmatch_type.setText(type + " - " + mnum);
                     }
 
                     if (match.has("Innings")) {
@@ -224,11 +246,15 @@ public class full_scoreboard extends AppCompatActivity {
                             String bowlingteam = Inning_num_1.getString("bowlingteam");
                             String bowlingteamid = Inning_num_1.getString("bowlingteamid");
                             String runs = Inning_num_1.getString("runs");
+
                             String wickets = Inning_num_1.getString("wickets");
                             String overs = Inning_num_1.getString("overs");
                             String innDesc = Inning_num_1.getString("innDesc");
                             String RR = Inning_num_1.getString("RR");
 
+                            ing_1_run.setText(runs + " - " + wickets);
+                            ing_1_over.setText(overs + " Over");
+                            content_full_team1_name_ipl.setText(battingteam);
                         }
 
                         if (Innings.has("2")) {
@@ -243,6 +269,9 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_2.getString("overs");
                             String innDesc = Inning_num_2.getString("innDesc");
                             String RR = Inning_num_2.getString("RR");
+                            ing_2_run.setText(runs + " - " + wickets);
+                            ing_2_over.setText(overs + " Over");
+                            content_full_team2_name_ipl.setText(battingteam);
                         }
                         if (Innings.has("3")) {
                             JSONObject Inning_num_3 = Innings.getJSONObject("3");
@@ -256,6 +285,7 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_3.getString("overs");
                             String innDesc = Inning_num_3.getString("innDesc");
                             String RR = Inning_num_3.getString("RR");
+
                         }
                         if (Innings.has("4")) {
 
@@ -304,7 +334,7 @@ public class full_scoreboard extends AppCompatActivity {
                         JSONObject team1 = match.getJSONObject("team1");
                         String team1_id = team1.getString("id");
                         flag_url1 = "http://i.cricketcb.com/cbzandroid/2.0/flags/team_" + team1_id + ".png";
-
+                        Log.e("Flag", flag_url1);
                         Picasso.with(full_scoreboard.this).load(flag_url1).into(display_img1);
 
 
@@ -315,7 +345,7 @@ public class full_scoreboard extends AppCompatActivity {
                         JSONArray squad = team1.getJSONArray("squad");
                         for (int k = 0; k < squad.length(); k++) {
                             String value_squad_team1 = squad.getString(k);
-                            //Toast.makeText(full_scoreboard.this, value_squad_team1, Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(full_scoreboard.this, value_squad_team1, Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -435,21 +465,23 @@ public class full_scoreboard extends AppCompatActivity {
     private void setTabBackgroundColor(Button button) {
 
     }
+
     private Timer autoUpdate;
+
     @Override
     protected void onResume() {
         super.onResume();
-//        autoUpdate = new Timer();
-//        autoUpdate.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                runOnUiThread(new Runnable() {
-//                    public void run() {
-//                        score_board();
-//                    }
-//                });
-//            }
-//        }, 0, 5000);
+        autoUpdate = new Timer();
+        autoUpdate.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        score_board();
+                    }
+                });
+            }
+        }, 0, 5000);
 
     }
 
@@ -479,10 +511,11 @@ public class full_scoreboard extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        autoUpdate.cancel();
         Intent intent = new Intent(full_scoreboard.this, MainActivity.class);
         startActivity(intent);
         finish();
-//        autoUpdate.cancel();
+
 
     }
 
@@ -508,15 +541,16 @@ public class full_scoreboard extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-//        autoUpdate.cancel();
+        autoUpdate.cancel();
         super.onDestroy();
         if (interstitialAd != null) {
             interstitialAd.destroy();
         }
     }
+
     @Override
     public void onPause() {
-//        autoUpdate.cancel();
+        autoUpdate.cancel();
         super.onPause();
     }
 

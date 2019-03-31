@@ -25,7 +25,7 @@
         <item>@string/about</item>
         <item>@string/rate</item>
         <item>@string/share</item>
-        <item>@string/Privacy_Policy</item>
+
     </string-array>
 
     <string name="about_msg">Active Solutions is a team of expert Designers and Developers.</string>
