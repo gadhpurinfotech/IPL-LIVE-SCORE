@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -162,15 +163,16 @@ public class recent extends Fragment {
         final ProgressDialog pDialog = new ProgressDialog(getContext());
         pDialog.setMessage("Loading...");
         pDialog.show();
-
         StringRequest strReq1 = new StringRequest(Request.Method.GET,
                 urlJsonArry, new Response.Listener<String>() {
+
 
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject header = null;
                     JSONArray jsonArray = new JSONArray(response);
+                    Log.e("Response ",jsonArray+"");
                     int numberOfItemsInResp = jsonArray.length();
                     for (int i = 0; i < numberOfItemsInResp; i++) {
                         constants = new Constants();
@@ -179,6 +181,7 @@ public class recent extends Fragment {
                         String srsid = match.getString("srsid");
                         constants.srs = match.getString("srs");
                         constants.datapath = match.getString("datapath");
+
                         if (match.has("header")) {
                             header = match.getJSONObject("header");
                             if(header.has("start_time")||header.has("end_tim")||header.has("vzone")) {
@@ -212,6 +215,8 @@ public class recent extends Fragment {
                             constants.bowlteamscore = miniscore.getString("bowlteamscore");
                             constants.overs = miniscore.getString("overs");
                             String bowlteamovers = miniscore.getString("bowlteamovers");
+                            constants.bowler_over=bowlteamovers;
+//                            Log.e("null over",constants.bowler_over);
                             String rrr = miniscore.getString("rrr");
                             String crr = miniscore.getString("crr");
                             String cprtshp = miniscore.getString("cprtshp");
@@ -269,6 +274,8 @@ public class recent extends Fragment {
                             String alerts_type = alerts.getString("type");
                         }
                         live_data_list.add(constants);
+                        System.out.println(i+" : "+ constants.overs);
+//                        Log.e("Constant Over : "+i,constants.overs.toString());
 
                     }
 

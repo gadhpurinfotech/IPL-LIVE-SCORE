@@ -167,7 +167,7 @@ public class livecricket extends Fragment {
         final ProgressDialog pDialog = new ProgressDialog(getContext());
         pDialog.setMessage("Loading...");
         pDialog.show();
-
+        Log.e("Live Cricket Main Url", urlJsonArry);
         StringRequest strReq1 = new StringRequest(Request.Method.GET,
                 urlJsonArry, new Response.Listener<String>() {
 
@@ -214,8 +214,10 @@ public class livecricket extends Fragment {
                             constants.batteamscore = miniscore.getString("batteamscore");
                             constants.bowlteamid = miniscore.getString("bowlteamid");
                             constants.bowlteamscore = miniscore.getString("bowlteamscore");
+//                            Log.e(constants.bowlteamscore," "+constants.batteamscore);
                             constants.overs = miniscore.getString("overs");
                             String bowlteamovers = miniscore.getString("bowlteamovers");
+                            constants.bowler_over = bowlteamovers;
                             String rrr = miniscore.getString("rrr");
                             String crr = miniscore.getString("crr");
                             String cprtshp = miniscore.getString("cprtshp");
@@ -272,7 +274,21 @@ public class livecricket extends Fragment {
                             String enabled = alerts.getString("enabled");
                             String alerts_type = alerts.getString("type");
                         }
-
+                        /*
+                        String bowlScore = constants.bowlteamscore;
+                        String batScore = constants.batteamscore;
+                        String bowlOver = constants.bowler_over;
+                        String batOver = constants.overs;
+                        if (constants.team1_id == constants.batteamid) {
+                            constants.overs = bowlOver;
+                            constants.bowler_over = batOver;
+                            constants.bowlteamscore = batScore;
+                            constants.batteamscore = bowlScore;
+                        }*/
+//                        }else
+//                        {
+//                            constants.bowlteamscore=bowlScore;
+//                        }
                         live_data_list.add(constants);
 
                     }

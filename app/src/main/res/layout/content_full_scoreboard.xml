@@ -86,9 +86,9 @@
 
             <ImageView
                 android:id="@+id/content_full_team1_img"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_margin="5dp"
                 android:background="@drawable/bg_round_team" />
 
             <TextView
@@ -105,9 +105,9 @@
 
             <ImageView
                 android:id="@+id/content_full_team2_img"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_margin="5dp"
                 android:background="@drawable/bg_round_team" />
 
             <TextView

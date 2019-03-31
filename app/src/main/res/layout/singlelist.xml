@@ -1,306 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_margin="10dp"
         android:background="@drawable/bg_raw_latest_news"
         android:orientation="vertical"
         android:padding="2dp">
 
-        <RelativeLayout
-            android:id="@+id/the_big_main"
+        <TextView
+            android:id="@+id/srs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/c_cb336b"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/content_full_image_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="120dp"
+            android:background="@color/textColorPrimary"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/overs"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout3"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="2dp"
-                android:text="overs"
-                android:textColor="@color/navigationBarColor"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/runs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/overs"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="2dp"
-                android:text="runs"
-                android:textColor="#fff"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/mnum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/overs"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="2dp"
-                android:text="3rd Match"
-                android:textColor="@color/navigationBarColor"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/mnum"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="2dp"
-                android:text="22.5 Ovs"
-                android:textColor="@color/navigationBarColor"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-
-            <RelativeLayout
-                android:id="@+id/layout4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/time"
-                android:layout_centerHorizontal="true">
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/grnd"
+                    android:id="@+id/txt_score1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="AUBai United "
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="13dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:paddingLeft="5dp"
-                    android:paddingStart="5dp"
-                    android:id="@+id/country"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_toRightOf="@+id/grnd"
-                    android:text="Arab Emirates"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="20dp">
-
-                <ImageView
-                    android:id="@+id/flag1"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentLeft="true"
-                    android:adjustViewBounds="true"
-                    android:background="@drawable/flag_defualt"
-                    android:scaleType="fitXY" />
-
-                <TextView
-                    android:id="@+id/team1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/flag1"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="5dp"
-                    android:text="team"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="15dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/main_big"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="20dp">
-
-                <ImageView
-                    android:id="@+id/flag2"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentRight="true"
-                    android:adjustViewBounds="true"
-                    android:background="@drawable/flag_defualt"
-                    android:scaleType="fitXY" />
-
-                <TextView
-                    android:id="@+id/team2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/flag2"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true"
-                    android:text="team"
-                    android:textAlignment="center"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="15dp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/empty_space_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true">
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/empty_space_layout"
-                android:layout_centerHorizontal="true">
-
-                <TextView
-                    android:id="@+id/sname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="IRE"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/bateamscore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/sname"
-                    android:text="116/1"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/layout2"
-                android:layout_centerHorizontal="true"
-                android:visibility="visible">
-
-                <TextView
-                    android:id="@+id/scnd_sname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="LHQ"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="13sp"
+                    android:text="Score"
+                    android:textSize="12dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/bowlteamscore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/scnd_sname"
-                    android:text="144/7"
-                    android:textColor="@color/navigationBarColor"
-                    android:textSize="13sp"
+                    android:maxWidth="50dp"
+                    android:maxLines="2"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text=""
+                    android:textColor="#6f156c"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
-            </RelativeLayout>
-        </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/layout6"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/the_big_main"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/bowl_over"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/status"
+                android:id="@+id/team1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:text=" LHQ WON BY 6 RUN"
-                android:textAlignment="center"
-                android:textColor="@color/c_cb336b"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout1"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/layout6"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:gravity="bottom"
-            android:textAlignment="center">
-
-            <!--<TextView-->
-                <!--android:id="@+id/grnd"-->
-                <!--android:layout_alignParentBottom="true"-->
-                <!--android:gravity="center|bottom"-->
-                <!--android:layout_alignParentLeft="true"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="AUBai United "-->
-                <!--android:textColor="@color/navigationBarColor"-->
-                <!--android:textSize="13dp"-->
-                <!--android:textStyle="bold" />-->
-
-            <TextView
-                android:layout_centerHorizontal="true"
-                android:id="@+id/srs"
-                android:layout_width="180dp"
-                android:layout_height="30dp"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/bg_match_bottum"
-                android:ellipsize="marquee"
-                android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:layout_marginLeft="8dp"
                 android:singleLine="true"
                 android:text=""
-                android:textAlignment="center"
-                android:textColor="@color/c_White"
-                android:textSize="14sp"
+                android:textColor="#222"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/flag1"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_round_team" />
+
             <TextView
-                android:id="@+id/srs_dot"
+                android:id="@+id/content_full_vs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/srs"
-                android:text=""
-                android:textColor="@color/windowBackground"
-                android:textSize="15sp"
+                android:gravity="center"
+                android:text="vs"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="#222"
+                android:textSize="12dp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/flag2"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_round_team" />
+
             <TextView
-                android:id="@+id/type"
+                android:id="@+id/team2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="TEST"
-                android:textColor="@color/windowBackground"
-                android:textSize="15sp"
+                android:layout_marginRight="8dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#222"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_score2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Score"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bateamscore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="right|end"
+                    android:maxWidth="50dp"
+                    android:maxLines="2"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text=""
+                    android:textColor="#6f156c"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlHardcoded,SpUsage" />
+
+                <TextView
+                    android:id="@+id/overs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text=""
+            android:textAllCaps="true"
+            android:textColor="@color/c_cb336b"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/grnd"
+                android:layout_width="120sp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="#6f156c"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/content_full_livestatus"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_match_bottum"
+                android:gravity="center"
+                android:text=""
+                android:textAllCaps="true"
+                android:textColor="@color/c_White"
+                android:textSize="10dp"
                 android:textStyle="bold"
-                android:visibility="gone" />
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/content_full_about"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="#6f156c"
+                android:textSize="11dp" />
         </RelativeLayout>
-    </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>

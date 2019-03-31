@@ -482,7 +482,7 @@ public class full_scoreboard extends AppCompatActivity {
                     }
                 });
             }
-        }, 0, 5000);
+        }, 0, 10000);
 
     }
 

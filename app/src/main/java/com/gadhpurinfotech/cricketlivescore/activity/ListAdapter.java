@@ -2,6 +2,7 @@ package com.gadhpurinfotech.cricketlivescore.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gadhpurinfotech.cricketlivescore.App.PVADMob;
 
@@ -46,9 +48,10 @@ public class ListAdapter extends BaseAdapter {
     }
 
     public static class ViewHolderItem {
-        TextView srs, sname, batteamscore, overs, runs, status, mnum, team1, team2, type, bowlteamscore, scnd_sname, srs_dot;
-        TextView vcity, vcountry, time, oversright, time_num;
-        RelativeLayout bg_listview, bat_score_layout, bowl_score_layout;
+        TextView srs,  batteamscore, overs, bowl_over, status, content_full_about, team1, team2,  bowlteamscore, content_full_livestatus;
+        TextView vcity, time;
+        TextView txt_score2,txt_score1;
+//        RelativeLayout  bat_score_layout, bowl_score_layout;
         ImageView flag1, flag2;
         String TW, decisn, team1_fName, team2_fName, team1_id, team2_id, flag_url1, flag_url2, srs_str;
         String mchState, batteamid, bowlteamid, batteamscore_str, bowlteamscore_str;
@@ -70,31 +73,36 @@ public class ListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.singlelist, null);
             holder.batteamscore = convertView.findViewById(R.id.bateamscore);
             holder.srs = convertView.findViewById(R.id.srs);
-            holder.bg_listview = (RelativeLayout) convertView.findViewById(R.id.layout1);
+//            holder.bg_listview = (RelativeLayout) convertView.findViewById(R.id.layout1);
 
-            holder.sname = convertView.findViewById(R.id.sname);
+//            holder.sname = convertView.findViewById(R.id.sname);
 
             holder.overs = convertView.findViewById(R.id.overs);
+            holder.bowl_over = convertView.findViewById(R.id.bowl_over);
             // holder.time_num =  convertView.findViewById(R.id.time_num);
-            holder.runs = convertView.findViewById(R.id.runs);
+//            holder.runs = convertView.findViewById(R.id.runs);
             holder.status = convertView.findViewById(R.id.status);
-            holder.srs_dot = convertView.findViewById(R.id.srs_dot);
+//            holder.srs_dot = convertView.findViewById(R.id.srs_dot);
 
-            holder.mnum = convertView.findViewById(R.id.mnum);
+            holder.content_full_about = convertView.findViewById(R.id.content_full_about);
             holder.team1 = convertView.findViewById(R.id.team1);
             holder.team2 = convertView.findViewById(R.id.team2);
             holder.flag1 = (ImageView) convertView.findViewById(R.id.flag1);
             holder.flag2 = (ImageView) convertView.findViewById(R.id.flag2);
-            holder.type = convertView.findViewById(R.id.type);
-            holder.time = convertView.findViewById(R.id.time);
+//            holder.type = convertView.findViewById(R.id.type);
+//            holder.time = convertView.findViewById(R.id.time);
             holder.vcity = (TextView) convertView.findViewById(R.id.grnd);
-            holder.vcountry = (TextView) convertView.findViewById(R.id.country);
-            holder.scnd_sname = convertView.findViewById(R.id.scnd_sname);
+//            holder.vcountry = (TextView) convertView.findViewById(R.id.country);
+//            holder.scnd_sname = convertView.findViewById(R.id.scnd_sname);
             holder.bowlteamscore = convertView.findViewById(R.id.bowlteamscore);
             holder.batteamscore = convertView.findViewById(R.id.bateamscore);
             //   holder.oversright =  convertView.findViewById(R.id.oversright);
-            holder.bowl_score_layout = convertView.findViewById(R.id.layout3);
-            holder.bat_score_layout = convertView.findViewById(R.id.layout2);
+//            holder.bowl_score_layout = convertView.findViewById(R.id.layout3);
+//            holder.bat_score_layout = convertView.findViewById(R.id.layout2);
+            holder.content_full_livestatus = convertView.findViewById(R.id.content_full_livestatus);
+            holder.txt_score1=convertView.findViewById(R.id.txt_score1);
+            holder.txt_score2=convertView.findViewById(R.id.txt_score2);
+
             convertView.setTag(holder);
 
             final ViewHolderItem finalHolder1 = holder;
@@ -138,21 +146,27 @@ public class ListAdapter extends BaseAdapter {
         Picasso.with(main.getActivity()).load(holder.flag_url1).into(holder.flag1);
         Picasso.with(main.getActivity()).load(holder.flag_url2).into(holder.flag2);
         holder.srs_str = this.main.live_data_list.get(position).srs;
-        holder.overs.setText(this.main.live_data_list.get(position).overs + "Ovs");
+        holder.overs.setText(this.main.live_data_list.get(position).overs + " Over");
+        holder.bowl_over.setText(this.main.live_data_list.get(position).bowler_over + " Over");
         holder.status.setText(this.main.live_data_list.get(position).status);
-        holder.mnum.setText(this.main.live_data_list.get(position).mnum);
+//        holder.content_full_about.setText(this.main.live_data_list.get(position).mnum);
+        holder.content_full_about.setText(this.main.live_data_list.get(position).type + " - " + this.main.live_data_list.get(position).mnum);
         holder.batteamscore.setText(this.main.live_data_list.get(position).batteamscore);
         holder.team1.setText(this.main.live_data_list.get(position).team1_sName);
         holder.team2.setText(this.main.live_data_list.get(position).team2_sName);
         holder.team1.setSelected(true);
         holder.team2.setSelected(true);
-        holder.type.setText(this.main.live_data_list.get(position).type);
+//        holder.type.setText(this.main.live_data_list.get(position).type);
         holder.batteamscore.setText(this.main.live_data_list.get(position).batteamscore);
         holder.bowlteamscore.setText(this.main.live_data_list.get(position).bowlteamscore);
         holder.vcity.setText(this.main.live_data_list.get(position).vcity);
-        holder.vcountry.setText(this.main.live_data_list.get(position).vcountry);
-        holder.time.setText(this.main.live_data_list.get(position).stTme);
-        holder.time.setText(this.main.live_data_list.get(position).startdt);
+//        holder.vcountry.setText(this.main.live_data_list.get(position).vcountry);
+//        holder.content_full_livestatus
+//        holder.time.setText(this.main.live_data_list.get(position).stTme);
+//        holder.time.setText(this.main.live_data_list.get(position).startdt);
+        Log.e("stTime",this.main.live_data_list.get(position).stTme);
+        Log.e("startdt",this.main.live_data_list.get(position).startdt);
+//        holder.content_full_livestatus.setText(this.main.live_data_list.get(position).mchState);
         int colorPosition = position % holder.bgColors.length;
         //holder.bg_listview.setBackgroundResource(holder.bgColors[colorPosition]);
         //holder.bowlteamscore.setTextColor(position % 2 == 0 ? Color.parseColor("#91BF17") : Color.parseColor("#3762ff"));
@@ -166,7 +180,7 @@ public class ListAdapter extends BaseAdapter {
         } else {
             holder.srs.setText(this.main.live_data_list.get(position).srs);
         }*/
-
+/*
         if (holder.team1_id.toString().equals(holder.batteamid)) {
             holder.sname.setText(this.main.live_data_list.get(position).team1_sName + ": ");
             holder.scnd_sname.setText(this.main.live_data_list.get(position).team2_sName + ": ");
@@ -188,68 +202,88 @@ public class ListAdapter extends BaseAdapter {
         } else {
             holder.sname.setText("");
             holder.scnd_sname.setText("");
-        }
+        }*/
 
 
         if (holder.mchState.toString().equals("inprogress") || holder.mchState.toString().equals("stump") || holder.mchState.toString().equals("tea")) {
-
-            holder.time.setVisibility(View.GONE);
+            holder.content_full_livestatus.setText("Live");
+//            holder.time.setVisibility(View.GONE);
             //holder.time_num.setVisibility(GONE);
-            holder.vcity.setVisibility(View.GONE);
-            holder.vcountry.setVisibility(View.GONE);
-            holder.bowl_score_layout.setVisibility(View.GONE);
+            holder.vcity.setVisibility(View.VISIBLE);
+//            holder.vcountry.setVisibility(View.GONE);
+//            holder.bowl_score_layout.setVisibility(View.GONE);
             holder.overs.setVisibility(View.VISIBLE);
-            holder.bat_score_layout.setVisibility(View.VISIBLE);
+            holder.bowl_over.setVisibility(View.VISIBLE);
+//            holder.bat_score_layout.setVisibility(View.VISIBLE);
         }
         if (holder.mchState.toString().equals("preview")) {
+            holder.content_full_livestatus.setText(this.main.live_data_list.get(position).startdt);
+            holder.txt_score1.setVisibility(View.GONE);
+            holder.txt_score2.setVisibility(View.GONE);
             holder.overs.setVisibility(View.GONE);
-            holder.mnum.setVisibility(View.VISIBLE);
-            holder.time.setVisibility(View.VISIBLE);
+            holder.bowl_over.setVisibility(View.GONE);
+            holder.content_full_about.setVisibility(View.VISIBLE);
+
+//            holder.time.setVisibility(View.VISIBLE);
             holder.vcity.setVisibility(View.VISIBLE);
-            holder.vcountry.setVisibility(View.VISIBLE);
-            holder.bowl_score_layout.setVisibility(View.GONE);
-            holder.bat_score_layout.setVisibility(View.GONE);
+//            holder.vcountry.setVisibility(View.VISIBLE);
+//            holder.bowl_score_layout.setVisibility(View.GONE);
+//            holder.bat_score_layout.setVisibility(View.GONE);
 
         }
 
         if (holder.mchState.toString().equals("complete")) {
-
-            holder.overs.setVisibility(View.GONE);
+            holder.content_full_livestatus.setText(this.main.live_data_list.get(position).mchState.toUpperCase());
+            holder.overs.setVisibility(View.VISIBLE);
+            holder.bowl_over.setVisibility(View.VISIBLE);
             //   holder.oversright.setVisibility(GONE);
-            holder.time.setVisibility(View.GONE);
+//            holder.time.setVisibility(View.GONE);
             //holder.time_num.setVisibility(GONE);
-            holder.vcity.setVisibility(View.GONE);
-            holder.vcountry.setVisibility(View.GONE);
-            holder.bowl_score_layout.setVisibility(View.VISIBLE);
-            holder.bat_score_layout.setVisibility(View.VISIBLE);
+            holder.vcity.setVisibility(View.VISIBLE);
+//            holder.vcountry.setVisibility(View.GONE);
+//            holder.bowl_score_layout.setVisibility(View.VISIBLE);
+//            holder.bat_score_layout.setVisibility(View.VISIBLE);
 
 
         }
+
         if (holder.mchState.toString().equals("delay")) {
+
+            holder.content_full_livestatus.setText(this.main.live_data_list.get(position).mchState.toUpperCase());
             holder.overs.setVisibility(View.GONE);
+            holder.bowl_over.setVisibility(View.GONE);
             //  holder.oversright.setVisibility(GONE);
-            holder.time.setVisibility(View.GONE);
-            holder.mnum.setVisibility(View.GONE);
+//            holder.time.setVisibility(View.GONE);
+            holder.content_full_about.setVisibility(View.GONE);
             holder.status.setVisibility(View.VISIBLE);
-            holder.vcity.setVisibility(View.GONE);
-            holder.vcountry.setVisibility(View.GONE);
-            holder.bowl_score_layout.setVisibility(View.GONE);
-            holder.bat_score_layout.setVisibility(View.GONE);
+            holder.vcity.setVisibility(View.VISIBLE);
+//            holder.vcountry.setVisibility(View.GONE);
+//            holder.bowl_score_layout.setVisibility(View.GONE);
+//            holder.bat_score_layout.setVisibility(View.GONE);
         }
 
         final ViewHolderItem finalHolder2 = holder;
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(!main.live_data_list.get(position).mchState.toLowerCase().equals("preview"))
+                {
+                    final String st = main.live_data_list.get(position).status;
+                    final String mDesc = main.live_data_list.get(position).mchDesc;
+                    Intent opn = new Intent(main.getActivity(), full_scoreboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    opn.putExtra("datapath", finalHolder2.datapath);
+                    opn.putExtra("status", st);
+                    opn.putExtra("matchDesc", mDesc);
+                    main.startActivity(opn);
+                    main.getActivity().finish();
+                }else
+
+                {
+                    Toast.makeText(main.getContext(),main.live_data_list.get(position).status,Toast.LENGTH_SHORT).show();
+                }
                 //pvadMob.showInter(position, "SHOW");
-                final String st = main.live_data_list.get(position).status;
-                final String mDesc = main.live_data_list.get(position).mchDesc;
-                Intent opn = new Intent(main.getActivity(), full_scoreboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                opn.putExtra("datapath", finalHolder2.datapath);
-                opn.putExtra("status", st);
-                opn.putExtra("matchDesc", mDesc);
-                main.startActivity(opn);
-                main.getActivity().finish();
+
                 // full_scorboard.checkmatchid(finalHolder.datapath);
             }
         });
