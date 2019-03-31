@@ -253,7 +253,7 @@ public class full_scoreboard extends AppCompatActivity {
                             String innDesc = Inning_num_1.getString("innDesc");
                             String RR = Inning_num_1.getString("RR");
 
-                            ing_1_run.setText(runs + " - " + wickets);
+                            ing_1_run.setText(runs + " / " + wickets);
                             ing_1_over.setText(overs + " Over");
                             content_full_team1_name_ipl.setText(battingteam);
                         }
@@ -270,7 +270,7 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_2.getString("overs");
                             String innDesc = Inning_num_2.getString("innDesc");
                             String RR = Inning_num_2.getString("RR");
-                            ing_2_run.setText(runs + " - " + wickets);
+                            ing_2_run.setText(runs + " / " + wickets);
                             ing_2_over.setText(overs + " Over");
                             content_full_team2_name_ipl.setText(battingteam);
                             tabLayout.getTabAt(1).select();
@@ -287,6 +287,9 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_3.getString("overs");
                             String innDesc = Inning_num_3.getString("innDesc");
                             String RR = Inning_num_3.getString("RR");
+                            ing_1_run.setText(runs + " / " + wickets);
+                            ing_1_over.setText(overs + " Over");
+                            content_full_team1_name_ipl.setText(battingteam);
                             tabLayout.getTabAt(2).select();
 
 
@@ -304,6 +307,9 @@ public class full_scoreboard extends AppCompatActivity {
                             String overs = Inning_num_4.getString("overs");
                             String innDesc = Inning_num_4.getString("innDesc");
                             String RR = Inning_num_4.getString("RR");
+                            ing_2_run.setText(runs + " / " + wickets);
+                            ing_2_over.setText(overs + " Over");
+                            content_full_team2_name_ipl.setText(battingteam);
                             tabLayout.getTabAt(3).select();
 
                         }

@@ -153,7 +153,7 @@ public class bat_bowl_ining_1 extends Fragment {
                             String overs = Inning_num_1.getString("overs");
                             String innDesc = Inning_num_1.getString("innDesc");
                             String RR = Inning_num_1.getString("RR");
-                            bat_description.setText(battingteam + "" + runs + "(" + overs + " /Ovs)");
+                            bat_description.setText(battingteam + " " + runs + " / "+ wickets  + " (" + overs + " Over)");
                             if (Inning_num_1.has("batsmen")) {
                                 if (match.has("players")) {
                                     JSONArray players = match.getJSONArray("players");
