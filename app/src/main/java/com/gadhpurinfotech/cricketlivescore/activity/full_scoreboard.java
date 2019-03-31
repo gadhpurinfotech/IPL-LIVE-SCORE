@@ -224,6 +224,7 @@ public class full_scoreboard extends AppCompatActivity {
                         String NoOfIngs = header.getString("NoOfIngs");
 
                         if (!mchState.isEmpty() && mchState.toLowerCase().equals("complete")) {
+                            autoUpdate.cancel();
                             content_full_livestatus.setText("COMPLETED");
                         } else {
                             content_full_livestatus.setText("LIVE");

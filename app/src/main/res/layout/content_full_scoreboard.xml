@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
-                    android:text="359-6"
+                    android:text=""
                     android:textColor="#6f156c"
                     android:textSize="14dp"
                     android:textStyle="bold" />
@@ -68,7 +68,7 @@
                     android:id="@+id/content_full_team1_Over"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="46.3 Over"
+                    android:text=""
                     android:textSize="12dp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:singleLine="true"
-                android:text="AUS"
+                android:text=""
                 android:textColor="#222"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -117,7 +117,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="8dp"
                 android:singleLine="true"
-                android:text="IND"
+                android:text=""
                 android:textColor="#222"
                 android:textSize="16dp"
                 android:textStyle="bold" />
@@ -143,7 +143,7 @@
                     android:layout_gravity="right"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
-                    android:text="359-6"
+                    android:text=""
                     android:textColor="#6f156c"
                     android:textSize="14dp"
                     android:textStyle="bold" />
@@ -153,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:text="46.3 Over"
+                    android:text=""
                     android:textSize="12dp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -187,7 +187,7 @@
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:maxLines="1"
-                android:text="Punjab Cricket Association IS Bindra Stadium"
+                android:text=""
                 android:textColor="#6f156c"
                 android:textSize="11dp" />
 
