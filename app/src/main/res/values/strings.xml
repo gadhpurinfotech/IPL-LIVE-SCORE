@@ -55,8 +55,8 @@
     <string name="fb_Interstitial_Ad"></string>
     <string name="fb_Native_Ad"></string>
     <string name="fb_Banner_Ad"></string>
-    <string name="interstitial_ad_id">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="banner_ad_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_id">ca-app-pub-9601236213119967/1239592884</string>
+    <string name="interstitial_ad_id">ca-app-pub-9601236213119967/5559424920</string>
 
 
 </resources>

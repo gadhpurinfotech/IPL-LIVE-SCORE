@@ -18,10 +18,6 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
-/**
- * Created by zeeshan on 3/17/2017.
- */
-
 
 public class AppController extends Application {
 

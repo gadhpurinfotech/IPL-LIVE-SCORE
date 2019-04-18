@@ -206,7 +206,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
                         break;
                     case 2:
-
                         fragment = new iplschedule();
                         break;
                     case 3:
@@ -270,7 +269,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     private void displayView(int position) {
         Fragment fragment = null;
         String title = getString(R.string.app_name);
-        Log.e("TEST", "Position : "+position);
         switch (position) {
             case 0:
                 fragment = new livecricket();
@@ -288,7 +286,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             case 3:
                 fragment = new Lastestnews();
                 title = getString(R.string.title_messages);
-
                 break;
 
             case 4:
@@ -312,21 +309,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             getSupportActionBar().setTitle(title);
         }
     }
-
-
-   /* private void setUpLayoutAdmob() {
-
-        if (ApplicationUtils.isOnline(this)) {
-            boolean b = true;
-            if (b) {
-                pvadMob.showBannerAd(layout);
-            } else {
-                layout.setVisibility(View.GONE);
-            }
-        } else {
-            layout.setVisibility(View.GONE);
-        }
-    }*/
 
     public void rateme() {
 
